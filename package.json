@@ -1,0 +1,15 @@
+{
+  "name": "practica-api-rest-javascript",
+  "version": "1.0.0",
+  "description": "practica de consumo de API REST con JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/10JONATHAN93/practica-api-rest-javascript.git)"
+  },
+  "author": "jsanchezt931003@gmail.com",
+  "license": "MIT"
+}
