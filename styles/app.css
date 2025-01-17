@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+:root { 
+    --yellow: #EECC75;
+    --green: #CAD297;
+    --aqua: #B7EAC5;
+    --lightBlue: #A2EEE5;
+    --darkBlue: #8EA2EA;
+    --red: #F09D9D;
+}
+  
+/* ETIQUETAS PRINCIPALES */
+html {
+    @apply bg-emerald-700;
+}
+
+body {
+    @apply bg-gray-800 font-dosis mt-2 p-0;
+}
+/* FIN ETIQUETAS PRINCIPALES */
+
+/* ETIQUETAS H1, H2, H3 */
+h1, h2, h3 {
+    @apply p-0 m-0;
+}
+
+h1, h2 {
+    @apply text-2xl text-green-500 font-dosis m-0 p-0;
+}
+
+h2 {
+    @apply text-lg text-green-300 font-dosis;
+}
+
+h3 {
+    @apply text-base text-green-100 font-dosis;
+}
+/* FIN ETIQUETAS H1, H2, H3 */
+
+/* ETIQUETAS FORMULARIO */
+input {
+    @apply border-none pl-4 text-lg text-emerald-700;
+}
+
+input::placeholder {
+    @apply font-red-hat text-gray-500;
+}
+
+button {
+    @apply border-none text-sm cursor-pointer bg-emerald-700;
+}
+
+button:hover {
+    @apply bg-emerald-400;
+}
+/* FIN ETIQUETAS FORMULARIO */
+
+
+/* CLASES PRINCIPALES COMPARTIDAS */
+.header-container, .trendingPreview-header, .categoriesPreview-container{
+    @apply pl-5;
+}
+
+.trendingPreview-header, .categoriesPreview-container, footer {
+    @apply mt-14;
+}
+
+.trendingPreview-header, .categoriesPreview-title {
+    @apply mb-6;
+}
+
+.trendingPreview-btn {
+    @apply mr-6;
+}
+
+.movie-container {
+    @apply cursor-pointer;
+}
+
+.movie-img {
+    @apply rounded-[8px]
+}
+
+.categoriesPreview-list, .categories-list {
+    @apply flex  flex-wrap items-center justify-around relative;
+}
+
+/* HEADER */
+.header-container {
+    @apply pt-[40px]
+}
+
+.header-container--long {
+    @apply bg-cover h-[480px] fixed top-0 w-full;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg');
+}
+
+.header-container--categoryView {
+    @apply bg-cover h-[480px] fixed top-0 w-full;
+    background: linear-gradient(180deg, rgba(238, 204, 117, 0.5) 0%, rgba(238, 204, 117, 0) 72.92%);
+}
+
+.header-title {
+    @apply mb-[16px];
+}
+
+.header-arrow {
+    @apply font-dosis text-4xl mb-[16px] cursor-pointer inline-block;
+}
+
+.header-arrow--white {
+    @apply text-green-100;
+}
+
+.header-searchForm {
+    @apply flex items-center justify-center w-full flex-nowrap;
+}
+
+.header-searchForm input {
+    @apply h-[48px] w-full rounded-l-[8px]
+}
+
+.header-searchForm button {
+    @apply w-[56px] h-[48px] rounded-r-[8px] mr-6;
+}
+
+/* FIN HEADER */
+
+/* TRENDING */
+.trendingPreview-header {
+    @apply flex items-center justify-between;
+}
+
+.trendingPreview-btn {
+    @apply rounded-[8px] h-[32px] w-[72px];
+}
+
+.trendingPreview-movieList {
+    @apply  overflow-x-scroll overflow-y-hidden whitespace-nowrap h-[241px] pl-[24px] pb-[16px];
+}
+
+.trendingPreview-movieList .movie-container {
+    @apply inline-block mr-[8px];
+}
+
+.trendingPreview-movieList .movie-container .movie-img {
+    @apply h-[225px] min-h-[225px] max-h-[225px] w-[150px] min-w-[150px] max-h-[150px];
+}
+/* FIN TRENDING */
+
+/*CATEGORIES */
+.category-container {
+    @apply w-[30%];
+}
+
+.category-title {
+    @apply mb-[8px] cursor-pointer whitespace-nowrap overflow-hidden overflow-ellipsis;
+}
+
+@layer components {
+    .category-title::before {
+      content: '••••';
+      color: transparent;
+      border-radius: 8px;
+      margin-right: 8px;
+      width: 8px;
+      height: 8px;
+      display: inline-block; /* Asegura que el elemento se vea correctamente */
+    }
+  
+    #id28 .category-title::before { background-color: theme('colors.yellow');} /* Usa el color extendido */
+    #id12 .category-title::before { background-color: theme('colors.red');}
+    #id16 .category-title::before { background-color: theme('colors.green');}
+    #id35 .category-title::before { background-color: theme('colors.lightBlue');}
+    #id80 .category-title::before { background-color: theme('colors.darkBlue'); }
+    #id99 .category-title::before { background-color: theme('colors.lightBlue'); }
+    #id18 .category-title::before { background-color: theme('colors.yellow'); }
+    #id10751 .category-title::before { background-color: theme('colors.red'); }
+    #id14 .category-title::before { background-color: theme('colors.green'); }
+    #id36 .category-title::before { background-color: theme('colors.yellow'); }
+    #id27 .category-title::before { background-color: theme('colors.red'); }
+    #id10402 .category-title::before { background-color: theme('colors.lightBlue'); }
+    #id9648 .category-title::before { background-color: theme('colors.green'); }
+    #id10749 .category-title::before { background-color: theme('colors.yellow'); }
+    #id878 .category-title::before { background-color: theme('colors.yellow'); }
+    #id10770 .category-title::before { background-color: theme('colors.lightBlue'); }
+    #id53 .category-title::before { background-color: theme('colors.green'); }
+    #id10752 .category-title::before { background-color: theme('colors.red'); }
+    #id37 .category-title::before { background-color: theme('colors.yellow'); }
+}
+  
+/* FIN CATEGORIES */
+
+/*  GENERIC LIST */
+.genericList-container {
+    @apply flex items-center justify-between flex-wrap py-[32px] px-[24px];
+}
+
+.genericList-container .movie-container {
+    @apply inline-block w-[30%];
+}
+
+.genericList-container .movie-img {
+    @apply w-full;
+}
+/*  FIN GENERIC LIST */
+
+/*  MOVIE DETAIL */
+.movieDetail-container {
+    @apply rounded-[16px] py-[32px] px-[24px] mt-[403px] mx-[5px] z-[1] bg-emerald-900;
+}
+
+.movieDetail-title {
+    @apply inline-block w-[80%] mb-[16px] p-0;
+}
+
+.movieDetail-score {
+    @apply inline-block text-gray-50 text-right w-[18%] font-bold;
+}
+
+.movieDetail-score::before {
+    @apply text-yellow pr-[4px];
+    content: '★';
+}
+
+.movieDetail-description {
+    @apply mb-[24px]
+}
+
+.relatedMovies-container {
+    @apply mt-[24px] h-[216px];
+}
+
+.relatedMovies-title {
+    @apply mb-[16px];
+}
+
+.relatedMovies-scrollContainer {
+    @apply absolute overflow-x-scroll overflow-y-hidden whitespace-nowrap pb-[16px] mr-[25px];
+}
+
+@layer components {
+    .relatedMovies-scrollContainer {
+      width: calc(100vw - 80px);
+    }
+}
+
+.relatedMovies-scrollContainer .movie-container {
+    @apply inline-block mr-[8px];
+}
+
+.relatedMovies-scrollContainer .movie-img {
+    @apply w-[125px] min-w-[125px] max-w-[125px] h-[187px] min-h-[187] max-h-[187];
+}
+/*  FIN MOVIE DETAIL */
+
+
+/*  FOOTER */
+footer {
+    @apply flex text-center justify-center items-center bg-green-700 text-gray-50  h-[48px];
+}
+/*  FIN FOOTER */
+
+
+/* NAVIGATION */ 
+.inactive {
+    @apply hidden;
+}
