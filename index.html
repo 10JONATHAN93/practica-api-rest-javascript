@@ -20,7 +20,7 @@
 
         <form id="searchForm" class="header-searchForm">
             <input type="text" placeholder="que pelicula buscas?">
-            <button>🔍</button>
+            <button id="searchButton">🔍</button>
         </form>
     </header>
 
@@ -30,31 +30,15 @@
             <h2 class="trendingPreview-title">Tendencias</h2>
             <button class="trendingPreview-btn">Ver más</button>
         </div>
-
+    
         <article class="trendingPreview-movieList">
-            <div class="movie-container">
+        <!-- <div class="movie-container">
                 <img 
                 src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tKkAKaaYvr3lBMjpb7OxNt2WthD.jpg" 
                 class="movie-img"
                 alt="nombre de la pelicula"
                 />
-            </div>
-
-            <div class="movie-container">
-                <img 
-                src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tKkAKaaYvr3lBMjpb7OxNt2WthD.jpg" 
-                class="movie-img"
-                alt="nombre de la pelicula"
-                />
-            </div>
-
-            <div class="movie-container">
-                <img 
-                src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tKkAKaaYvr3lBMjpb7OxNt2WthD.jpg" 
-                class="movie-img"
-                alt="nombre de la pelicula"
-                />
-            </div>
+            </div>  -->
         </article>
     </section>
 
@@ -62,17 +46,10 @@
         <h2 class="categoriesPreview-title">Categorías</h2>
 
         <article class="categoriesPreview-list">
-            <div class="category-container">
+            <!-- <div class="category-container">
                 <h3 id="id28" class="category-title">Romance</h3>
-            </div>
+            </div> -->
 
-            <div class="category-container">
-                <h3 id="id16" class="category-title">Drama</h3>
-            </div>
-
-            <div class="category-container">
-                <h3 id="id14" class="category-title">Acción</h3>
-            </div>
         </article>
     </section>
 
@@ -157,7 +134,10 @@
 
     <footer>proyecto practica de consumos de API realizado por Jonathan Sanchez</footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="./src/confidential.js"></script>
+    <script src="./src/nodes.js"></script>
     <script src="./src/main.js"></script>
+    <script src="./src/navigation.js"></script>
 </body>
 </html>

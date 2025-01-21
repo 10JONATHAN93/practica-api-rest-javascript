@@ -160,36 +160,37 @@ button:hover {
     @apply mb-[8px] cursor-pointer whitespace-nowrap overflow-hidden overflow-ellipsis;
 }
 
-@layer components {
+@layer utilities {
     .category-title::before {
       content: '••••';
       color: transparent;
+      background-color: var(--idColor);
       border-radius: 8px;
       margin-right: 8px;
-      width: 8px;
-      height: 8px;
+      width: 20px;
+      height: 20px;
       display: inline-block; /* Asegura que el elemento se vea correctamente */
     }
   
-    #id28 .category-title::before { background-color: theme('colors.yellow');} /* Usa el color extendido */
-    #id12 .category-title::before { background-color: theme('colors.red');}
-    #id16 .category-title::before { background-color: theme('colors.green');}
-    #id35 .category-title::before { background-color: theme('colors.lightBlue');}
-    #id80 .category-title::before { background-color: theme('colors.darkBlue'); }
-    #id99 .category-title::before { background-color: theme('colors.lightBlue'); }
-    #id18 .category-title::before { background-color: theme('colors.yellow'); }
-    #id10751 .category-title::before { background-color: theme('colors.red'); }
-    #id14 .category-title::before { background-color: theme('colors.green'); }
-    #id36 .category-title::before { background-color: theme('colors.yellow'); }
-    #id27 .category-title::before { background-color: theme('colors.red'); }
-    #id10402 .category-title::before { background-color: theme('colors.lightBlue'); }
-    #id9648 .category-title::before { background-color: theme('colors.green'); }
-    #id10749 .category-title::before { background-color: theme('colors.yellow'); }
-    #id878 .category-title::before { background-color: theme('colors.yellow'); }
-    #id10770 .category-title::before { background-color: theme('colors.lightBlue'); }
-    #id53 .category-title::before { background-color: theme('colors.green'); }
-    #id10752 .category-title::before { background-color: theme('colors.red'); }
-    #id37 .category-title::before { background-color: theme('colors.yellow'); }
+    #id28 { --idColor: theme('colors.red.500')} /* Usa el color extendido */
+    #id12 { --idColor: theme('colors.red.500');}
+    #id16 { --idColor: theme('colors.green.500');}
+    #id35 { --idColor: theme('colors.lightBlue');}
+    #id80 { --idColor: theme('colors.darkBlue'); }
+    #id99 { --idColor: theme('colors.lightBlue'); }
+    #id18 { --idColor: theme('colors.yellow'); }
+    #id10751 { --idColor: theme('colors.red.100'); }
+    #id14 { --idColor: theme('colors.green.500'); }
+    #id36 { --idColor: theme('colors.green.500'); }
+    #id27 { --idColor: theme('colors.red.500'); }
+    #id10402 { --idColor: theme('colors.lightBlue'); }
+    #id9648 { --idColor: theme('colors.aqua'); }
+    #id10749 { --idColor: theme('colors.yellow'); }
+    #id878 { --idColor: theme('colors.yellow'); }
+    #id10770 { --idColor: theme('colors.lightBlue'); }
+    #id53 { --idColor: theme('colors.green.500'); }
+    #id10752 { --idColor: theme('colors.red.500'); }
+    #id37 { --idColor: theme('colors.yellow'); }
 }
   
 /* FIN CATEGORIES */
@@ -221,13 +222,15 @@ button:hover {
     @apply inline-block text-gray-50 text-right w-[18%] font-bold;
 }
 
-.movieDetail-score::before {
-    @apply text-yellow pr-[4px];
-    content: '★';
+@layer utilities {
+    .movieDetail-score::before {
+        content: '★';
+        @apply text-yellow pr-[4px];
+    }
 }
 
 .movieDetail-description {
-    @apply mb-[24px]
+    @apply text-gray-50 mb-[24px];
 }
 
 .relatedMovies-container {
@@ -265,7 +268,7 @@ footer {
 /*  FIN FOOTER */
 
 
-/* NAVIGATION */ 
+/* NAVIGATION */
 .inactive {
     @apply hidden;
 }
