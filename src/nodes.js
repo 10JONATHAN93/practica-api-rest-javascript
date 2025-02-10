@@ -11,7 +11,7 @@ const searchForm = document.querySelector('#searchForm'); // el id de la etiquet
 //listas
 const trendingPreviewMovieList = document.querySelector('.trendingPreview-movieList'); // el id de la etiqueta article que se encuentra en la primer etiqueta section del html
 const categoriesPreviewList = document.querySelector('.categoriesPreview-list'); // el id de la etiqueta article que se encuentra en la segunda etiqueta section del html
-const movieDetailCategoriesList = document.querySelector('#movieDetail .categories-list') // el nombre de la clase de la etiqueta article que se encuentra en la cuarta etiqueta section del html
+const movieDetailCategoriesList = document.querySelector('#movieDetail .categories-list'); // el nombre de la clase de la etiqueta article que se encuentra en la cuarta etiqueta section del html
 const relatedMoviesContainer = document.querySelector('.relatedMovies-scrollContainer'); // el nombre de la clase de la etiqueta div que se encuentra en la cuarta etiqueta section del html
 
 // elementos
@@ -25,7 +25,7 @@ const searchFormInput = document.querySelector('#searchForm input');
 const searchFormButton = document.querySelector('#searchButton');
 
     // elementos de la seccion TrendingPreview
-const trendingButton = document.querySelector('trendingPreview-btn');
+const trendingButton = document.querySelector('.trendingPreview-btn');
 
     // elementos de la seccion movieDetail
 const movieDetailTitle = document.querySelector('.movieDetail-title');

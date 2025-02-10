@@ -81,7 +81,11 @@ button:hover {
 }
 
 .movie-img {
-    @apply rounded-[8px]
+    @apply rounded-[8px];
+}
+
+.movie-img:hover {
+    @apply border-2 border-green-400 shadow-[0_0_10px_4px_#00ff00];
 }
 
 .categoriesPreview-list, .categories-list {
@@ -90,12 +94,12 @@ button:hover {
 
 /* HEADER */
 .header-container {
-    @apply pt-[40px]
+    @apply pt-[40px];
 }
 
 .header-container--long {
     @apply bg-cover h-[480px] fixed top-0 w-full;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), var(--dynamic-bg);
 }
 
 .header-container--categoryView {
@@ -157,8 +161,13 @@ button:hover {
 }
 
 .category-title {
-    @apply mb-[8px] cursor-pointer whitespace-nowrap overflow-hidden overflow-ellipsis;
+    @apply mb-[8px] p-[10px] cursor-pointer whitespace-nowrap overflow-hidden overflow-ellipsis;
 }
+
+.category-title:hover {
+    @apply border-2 rounded-[10px] border-green-400 shadow-[0_0_10px_4px_#00ff00];
+}
+
 
 @layer utilities {
     .category-title::before {
@@ -197,7 +206,7 @@ button:hover {
 
 /*  GENERIC LIST */
 .genericList-container {
-    @apply flex items-center justify-between flex-wrap py-[32px] px-[24px];
+    @apply flex items-center justify-between flex-wrap gap-[20px] py-[32px] px-[24px];
 }
 
 .genericList-container .movie-container {
@@ -211,7 +220,7 @@ button:hover {
 
 /*  MOVIE DETAIL */
 .movieDetail-container {
-    @apply rounded-[16px] py-[32px] px-[24px] mt-[403px] mx-[5px] z-[1] bg-emerald-900;
+    @apply relative rounded-[16px] pt-[32px] px-[24px] pb-[50px] mt-[403px] mx-[5px] z-[1] bg-emerald-900;
 }
 
 .movieDetail-title {
@@ -242,7 +251,7 @@ button:hover {
 }
 
 .relatedMovies-scrollContainer {
-    @apply absolute overflow-x-scroll overflow-y-hidden whitespace-nowrap pb-[16px] mr-[25px];
+    @apply absolute overflow-x-scroll overflow-y-hidden whitespace-nowrap pt-[20px] pb-[20px] mr-[25px];
 }
 
 @layer components {
@@ -272,3 +281,4 @@ footer {
 .inactive {
     @apply hidden;
 }
+
