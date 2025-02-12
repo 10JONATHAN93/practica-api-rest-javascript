@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities {
+    .animation-delay-1\.2s {
+        animation-delay: 0.2s;
+      }
+      .animation-delay-0\.4s {
+        animation-delay: 0.4s;
+      }    
+};
 
 * { box-sizing: border-box; }
 :root { 
@@ -53,11 +60,67 @@ button {
     @apply border-none text-sm cursor-pointer bg-emerald-700;
 }
 
-button:hover {
+button:hover:not(.movie-btn) {
     @apply bg-emerald-400;
 }
 /* FIN ETIQUETAS FORMULARIO */
 
+
+
+/* SHARED */
+
+.header-container, .trendingPreview-header, .categoriesPreview-container, .liked-header {
+    @apply py-0 px-[24px];
+}
+
+.trendingPreview-container, .categoriesPreview-container, .liked-container, footer {
+    @apply mt-[48px];
+}
+
+.trendingPreview-header, .categoriesPreview-title, .liked-header {
+    @apply mb-[24px];
+}
+
+.movie-container--loading {
+    @apply cursor-pointer animate-loading-skeleton [animation-delay:0.2s] bg-teal-700 rounded-[8px] h-[225px] max-h-[225px] w-[150px] max-w-[150px];
+}
+
+.movie-img {
+    @apply rounded-[8px];
+}
+
+.movie-btn {
+    @apply absolute top-[5px] right-[10px] h-[30px] w-[30px] rounded-[30px] bg-red-400;
+}
+
+.movie-btn:hover {
+    @apply bg-red-50;
+}
+
+@layer utilities {
+    .movie-btn::before{
+        content: "🤍"; 
+    }
+}
+
+.movie-btn--liked {
+    @apply bg-red-50 shadow-[0_0_10px_4px_#ff0a0a];
+}
+@layer utilities {
+    .movie-btn--liked::before {
+        content: "❤️";
+    }
+}
+
+.categoriesPreview-list, .categories-list {
+    @apply flex flex-wrap items-center justify-between relative rounded-[8px] mb-[15px];
+}
+
+.category-container--loading {
+    @apply cursor-pointer animate-loading-skeleton [animation-delay:0.2s] bg-teal-700 w-[30%] h-[25px] min-h-[25px] max-h-[25px] w-[150px] min-w-[150px] max-w-[150px] mb-[15px];
+}
+
+/* FIN SHARED */
 
 /* CLASES PRINCIPALES COMPARTIDAS */
 .header-container, .trendingPreview-header, .categoriesPreview-container{
@@ -77,7 +140,7 @@ button:hover {
 }
 
 .movie-container {
-    @apply cursor-pointer;
+    @apply cursor-pointer relative;
 }
 
 .movie-img {
@@ -98,7 +161,7 @@ button:hover {
 }
 
 .header-container--long {
-    @apply bg-cover h-[480px] fixed top-0 w-full;
+    @apply bg-cover h-[500px] fixed top-0 w-full;
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), var(--dynamic-bg);
 }
 
@@ -134,7 +197,7 @@ button:hover {
 /* FIN HEADER */
 
 /* TRENDING */
-.trendingPreview-header {
+.trendingPreview-header, .liked-header {
     @apply flex items-center justify-between;
 }
 
@@ -142,22 +205,27 @@ button:hover {
     @apply rounded-[8px] h-[32px] w-[72px];
 }
 
-.trendingPreview-movieList {
-    @apply  overflow-x-scroll overflow-y-hidden whitespace-nowrap h-[241px] pl-[24px] pb-[16px];
+.trendingPreview-movieList,
+.liked-movieList {
+    @apply  overflow-x-scroll overflow-y-hidden whitespace-nowrap h-[260px] pl-[24px] pb-[16px] pt-[10px];
 }
 
-.trendingPreview-movieList .movie-container {
-    @apply inline-block mr-[8px];
+.trendingPreview-movieList .movie-container,
+.liked-movieList .movie-container {
+    @apply relative inline-block mr-[8px];
 }
 
-.trendingPreview-movieList .movie-container .movie-img {
+.trendingPreview-movieList .movie-container .movie-img , 
+.liked-movieList .movie-container .movie-img {
     @apply h-[225px] min-h-[225px] max-h-[225px] w-[150px] min-w-[150px] max-h-[150px];
 }
+
+
 /* FIN TRENDING */
 
 /*CATEGORIES */
 .category-container {
-    @apply w-[30%];
+    @apply w-[30%] rounded-[8px];
 }
 
 .category-title {
@@ -214,13 +282,13 @@ button:hover {
 }
 
 .genericList-container .movie-img {
-    @apply w-full;
+    @apply w-full min-h-[200px];
 }
 /*  FIN GENERIC LIST */
 
 /*  MOVIE DETAIL */
 .movieDetail-container {
-    @apply relative rounded-[16px] pt-[32px] px-[24px] pb-[50px] mt-[403px] mx-[5px] z-[1] bg-emerald-900;
+    @apply relative rounded-[16px] pt-[32px] px-[24px] pb-[50px] mt-[500px] mx-[5px] z-[1] bg-emerald-900;
 }
 
 .movieDetail-title {
@@ -265,7 +333,7 @@ button:hover {
 }
 
 .relatedMovies-scrollContainer .movie-img {
-    @apply w-[125px] min-w-[125px] max-w-[125px] h-[187px] min-h-[187] max-h-[187];
+    @apply w-[125px] min-w-[125px] max-w-[125px];
 }
 /*  FIN MOVIE DETAIL */
 
@@ -281,4 +349,3 @@ footer {
 .inactive {
     @apply hidden;
 }
-

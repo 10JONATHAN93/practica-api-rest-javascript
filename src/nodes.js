@@ -4,6 +4,7 @@ const trendingPreviewSection = document.querySelector('#trendingPreview'); // el
 const categoriesPreviewSection = document.querySelector('#categoriesPreview'); // el id de la segunda etiqueta de section del html
 const genericSection = document.querySelector('#genericList'); // el id de la tercera etiqueta de section del html
 const movieDetailSection = document.querySelector('#movieDetail') // el id de la cuarta etiqueta de section del html
+const likedMoviesSection = document.querySelector('#liked');
 
 // formulario de busqueda
 const searchForm = document.querySelector('#searchForm'); // el id de la etiqueta form del html
@@ -13,6 +14,7 @@ const trendingPreviewMovieList = document.querySelector('.trendingPreview-movieL
 const categoriesPreviewList = document.querySelector('.categoriesPreview-list'); // el id de la etiqueta article que se encuentra en la segunda etiqueta section del html
 const movieDetailCategoriesList = document.querySelector('#movieDetail .categories-list'); // el nombre de la clase de la etiqueta article que se encuentra en la cuarta etiqueta section del html
 const relatedMoviesContainer = document.querySelector('.relatedMovies-scrollContainer'); // el nombre de la clase de la etiqueta div que se encuentra en la cuarta etiqueta section del html
+const likedMoviesListArticle = document.querySelector('.liked-movieList');
 
 // elementos
     // elementos del header

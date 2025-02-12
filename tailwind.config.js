@@ -26,6 +26,16 @@ module.exports = {
         'red-hat': ['"Red Hat Display"', 'sans-serif'],
 
       },
+      animation: {
+        'loading-skeleton': 'pulse 1.5s ease-in-out infinite', // Definir la animación
+      },
+      keyframes: {
+        pulse: {
+          '0%': { opacity: 1 },
+          '50%': { opacity: 0.5 },
+          '100%': { opacity: 1 },
+        },
+      },
     },
   },
   plugins: [],
